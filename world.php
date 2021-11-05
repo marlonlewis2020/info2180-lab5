@@ -26,10 +26,10 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <thead>
     <tr>
-      <td>Name</td>
-      <td>Continent</td>
-      <td>Independence</td>
-      <td>Head of State</td>
+      <th>Name</td>
+      <th>Continent</th>
+      <th>Independence</th>
+      <th>Head of State</th>
     </tr>
   </thead>
   <tbody>
@@ -43,15 +43,15 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <?php 
   endforeach; ?>
   </tbody>
-  <caption>General Information for list of Countries</caption>
+  <em><caption>General Information for list of Countries</caption></em>
 
 <?php } else{ ?>
 
   <thead>
     <tr>
-      <td>Name</td>
-      <td>District</td>
-      <td>Population</td>
+      <th>Name</th>
+      <th>District</th>
+      <th>Population</th>
     </tr>
   </thead>
   <tbody>
@@ -64,7 +64,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <?php 
   endforeach; ?>
   </tbody>
-  <caption>City Information for list of Countries</caption>
+  <em><caption>City Information for list of Countries</caption></em>
 <?php }
   ?>
 </table>

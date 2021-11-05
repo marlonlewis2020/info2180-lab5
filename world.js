@@ -28,4 +28,10 @@ window.onload = function(){
         });
     })
 
+    $("#clear").click(function(e){
+        e.preventDefault();
+        $("#result").html("<p>data cleared</p>");
+        $("#result").fadeOut(3000);
+    })
+
 }

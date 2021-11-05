@@ -1,1 +1,150 @@
-/* Add your own styles */
+:root{
+    --btn1: rgb(110, 110, 255);
+    --btn2: rgb(255,110,110);
+    --odd: rgb(170, 170, 170);
+    --pad: 20px;
+    --pad-l-r: 150px;
+    --pad-btns: 65px;
+    --myheight: 150px;
+}
+
+#country{
+  width:500px;
+}
+header{
+    width: 100%;
+    color: azure;
+    background-image: url("images/map1.png");
+    background-color: rgb(24, 11, 95);
+    font-size: x-large;
+    height:var(--myheight);
+    /* padding: 125px 0; */
+    text-align: center;
+    align-items: center;
+    position:fixed;
+    top:0em;
+    right: 0em;
+    z-index: 1;
+    }
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(255, 255, 255);    
+}
+
+body::before{
+    content: "";
+    background-image: url("images/map2.png");
+    background-size: cover;
+    position: absolute;
+    z-index:-1;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.18;
+}
+
+caption{
+    font-weight:bold;
+    font-size:18px;
+    color:blue;
+    padding-bottom: var(--pad);
+}
+
+label{
+    font-weight: bold;
+    font-style: italic;
+}
+
+#controls{
+    padding: var(--myheight) var(--pad-l-r) 50px var(--pad-l-r);
+}
+
+#buttons{
+    padding-left: var(--pad-btns);
+    padding-bottom: var(--pad)
+}
+
+#inputs{
+    padding: var(--pad) 0;
+}
+
+#clear, #lookup_countries, #lookup_cities{
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    height: 25px;
+    cursor:pointer;
+}
+
+#lookup_countries{
+    background-color: var(--btn1);
+}
+
+#lookup_cities{
+    background-color: var(--btn2);
+}
+
+#clear{
+    background-color: rgb(5,15,25);
+    color:azure;
+}
+
+#clear:hover, #lookup_countries:hover, #lookup_cities:hover{
+    color: white;
+    opacity: 85%;
+    font-weight: bold;
+}
+
+th {
+    color: rgb(150,200,255);
+    font-weight:bold;
+    font-size: large;
+    background-color: rgb(5,15,25);    
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr{
+    background-color: var(--odd);
+    padding: 45px;
+}
+
+tr:nth-child(odd){
+    background-color: white;
+}
+
+td{
+    width: 300px;
+}
+
+#result{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+p{
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#footer{
+    width: 100%;
+    margin:0 0;
+    padding: 4px 0;
+    background-color: var(--btn2);
+    position: fixed;
+    bottom: 0em;
+    left: 0em;
+    opacity: 95%;
+}
