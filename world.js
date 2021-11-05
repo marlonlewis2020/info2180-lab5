@@ -1,20 +1,31 @@
 window.onload = function(){
-    
-    $("#lookup").click(function(e){
-        e.preventDefault();
-        $.get("world.php?country="+$("#country").val().trim(), function(data){
-            $("#result").html(data);
-            $("#country").val("");
-        });
-    })
 
+    function myphp(){return "world.php?country="+$('#country').val().trim() }
+    
     $("#country").keyup(function(e){
         e.preventDefault();
         if(e.keyCode==13){
-            $.get("world.php?country="+$("#country").val().trim(), function(data){
+            $.get(myphp()+"&lookup=countries", function(data){
                 $("#result").html(data);
                 $("#country").val("");
             });
         }
     })
+
+    $("#lookup_countries").click(function(e){
+        e.preventDefault();
+        $.get(myphp()+"&lookup=countries", function(data){
+            $("#result").html(data);
+            $("#country").val("");
+        });
+    })
+
+    $("#lookup_cities").click(function(e){
+        e.preventDefault();
+        $.get(myphp()+"&lookup=cities", function(data){
+            $("#result").html(data);
+            $("#country").val("");
+        });
+    })
+
 }
