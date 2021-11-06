@@ -61,21 +61,13 @@ label{
     padding: var(--myheight) var(--pad-l-r) 50px var(--pad-l-r);
 }
 
-#buttons{
-    padding-left: var(--pad-btns);
-    padding-bottom: var(--pad)
-}
-
 #inputs{
     padding: var(--pad) 0;
 }
 
-#clear, #lookup_countries, #lookup_cities{
-    border-radius: 5px;
-    border: none;
-    width: 140px;
-    height: 25px;
-    cursor:pointer;
+#buttons{
+    padding-left: var(--pad-btns);
+    padding-bottom: var(--pad)
 }
 
 #lookup_countries{
@@ -91,7 +83,16 @@ label{
     color:azure;
 }
 
-#clear:hover, #lookup_countries:hover, #lookup_cities:hover{
+.btn{
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    height: 25px;
+    cursor:pointer;
+    margin-right: 36px;
+}
+
+.btn:hover{
     color: white;
     opacity: 85%;
     font-weight: bold;
