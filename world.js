@@ -1,4 +1,21 @@
-window.onload = function(){
+$(document).ready(function(){
+
+    var nav = $("#controls");
+    // const ctrltop = nav.offset().top;
+    // const ctrlleft = nav.offset().left;
+
+    // $(window).bind("scroll",function(){
+    //     if($(this).scrollTop() >= nav.offset().top){
+    //         alert("scrolled");
+    //         // nav.css("position","fixed");
+    //         // nav.offset({top:200,left:0});
+    //     }
+    //     else{
+    //         alert("scrolled");
+    //         // nav.css("position","initial");
+    //         // nav.offset({top:ctrltop,left:ctrlleft});
+    //     }
+    // })
 
     function myphp(){return "world.php?country="+$('#country').val().trim() }
     
@@ -36,5 +53,4 @@ window.onload = function(){
         $("#result").html("<p>data cleared</p>");
         $("#result").fadeOut(500);
     })
-
-}
+})

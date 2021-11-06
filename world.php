@@ -21,6 +21,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
+<div class="table">
 <table>
 <?php if($lookup=="countries"){?>
 
@@ -32,6 +33,8 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <th>Head of State</th>
     </tr>
   </thead>
+  <?php $caption="General Information for list of Countries";?>
+  
   <tbody>
   <?php foreach($results as $row): ?>
     <tr>
@@ -43,7 +46,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <?php 
   endforeach; ?>
   </tbody>
-  <em><caption>General Information for list of Countries</caption></em>
+  
 
 <?php } else{ ?>
 
@@ -64,7 +67,14 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <?php 
   endforeach; ?>
   </tbody>
-  <em><caption>City Information for list of Countries</caption></em>
+ 
+  <?php $caption="City Information for list of Countries"; ?>
+
 <?php }
   ?>
 </table>
+</div>
+
+<div id="caption">
+  <em><caption><?=$caption?></caption></em>
+</div>
