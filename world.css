@@ -115,18 +115,19 @@ th, td {
   padding: 8px;
 }
 
-tr{
+tbody tr{
     background-color: var(--odd);
     padding: 45px;
+    opacity: 65%;
 }
 
 tr:nth-child(odd){
     background-color: white;
-    opacity: 0.60;
 }
 
-tr:first-child, th{
-    opacity: 1; 
+tr th{
+    background-color: black;
+    opacity: 100%; 
 }
 
 td{

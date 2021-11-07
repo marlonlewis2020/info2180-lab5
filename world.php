@@ -34,15 +34,6 @@ if($lookup=="countries"){
 <table>
 
 <?php if($lookup=="countries"){?>
-
-  <thead>
-    <tr>
-      <th>Name</td>
-      <th>Continent</th>
-      <th>Independence</th>
-      <th>Head of State</th>
-    </tr>
-  </thead>
   
   <tbody>
   <?php foreach($results as $row): ?>
@@ -55,16 +46,17 @@ if($lookup=="countries"){
   <?php 
   endforeach; ?>
   </tbody>
+  <thead>
+    <tr>
+      <th>Name</td>
+      <th>Continent</th>
+      <th>Independence</th>
+      <th>Head of State</th>
+    </tr>
+  </thead>
   
 <?php } else{ ?>
 
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>District</th>
-      <th>Population</th>
-    </tr>
-  </thead>
   <tbody>
   <?php foreach($results as $row): ?>
     <tr>
@@ -75,6 +67,13 @@ if($lookup=="countries"){
   <?php 
   endforeach; ?>
   </tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>District</th>
+      <th>Population</th>
+    </tr>
+  </thead>
 
 <?php }
   ?>
