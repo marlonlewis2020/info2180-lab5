@@ -19,10 +19,20 @@ $stmt = $conn->query($sql);
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-?>
+if($lookup=="countries"){
+  $caption="General Information for list of Countries";
+}else {
+  $caption="City Information for list of Countries";
+}
+  ?>
+
+<div id="caption">
+  <em><caption><?=$caption?></caption></em>
+</div>
 
 <div class="table">
 <table>
+
 <?php if($lookup=="countries"){?>
 
   <thead>
@@ -33,7 +43,6 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <th>Head of State</th>
     </tr>
   </thead>
-  <?php $caption="General Information for list of Countries";?>
   
   <tbody>
   <?php foreach($results as $row): ?>
@@ -47,7 +56,6 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   endforeach; ?>
   </tbody>
   
-
 <?php } else{ ?>
 
   <thead>
@@ -67,14 +75,8 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <?php 
   endforeach; ?>
   </tbody>
- 
-  <?php $caption="City Information for list of Countries"; ?>
 
 <?php }
   ?>
 </table>
-</div>
-
-<div id="caption">
-  <em><caption><?=$caption?></caption></em>
 </div>

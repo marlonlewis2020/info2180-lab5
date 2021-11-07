@@ -60,7 +60,7 @@ label{
 }
 
 #controls{
-    padding: var(--myheight) var(--pad-l-r) 50px var(--pad-l-r);
+    padding: var(--myheight) var(--pad-l-r) 0px var(--pad-l-r);
 }
 
 #inputs{
@@ -125,35 +125,35 @@ tr:nth-child(odd){
     opacity: 0.60;
 }
 
-tr:first-child{
-    opacity:1; 
+tr:first-child, th{
+    opacity: 1; 
 }
 
 td{
     width: 300px;
 }
 
-#result{
-    margin: auto;
-    width: 80%;
-    height: 250px;
-    padding:10px;
-    margin-bottom: 0px;
-}
-
 p{
     text-align: center;
 }
 
+#result{
+    margin: auto;
+    width: 70%;
+    height: 280px;
+    padding:10px;
+    margin-bottom: 20px;
+}
+
 .table{
-    align-items: center;
-    width:100%;
+    text-align: center;
+    width: auto;
     height: 100%;
     overflow-y: scroll;
-    
 }
 
 table{
+    margin:auto;
     border-collapse: collapse;
     position: relative;
     margin-bottom: 0px;
