@@ -9,9 +9,8 @@ $lookup = filter_input(INPUT_GET,"lookup",FILTER_SANITIZE_STRING);
 $country = filter_input(INPUT_GET,"country",FILTER_SANITIZE_STRING);
 $sql = "";
 
-if($lookup==="countries"){
-  $sql = "SELECT * FROM $lookup where name like '%$country%'";
-} else{
+if($lookup==="countries"){$sql = "SELECT * FROM $lookup where name like '%$country%'";}
+else{
   $sql = "SELECT ci.name, ci.district, ci.population FROM $lookup ci join countries co on ci.country_code = co.code where co.name like '%$country%'";
 }
 
@@ -20,25 +19,16 @@ $stmt = $conn->query($sql);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if($lookup=="countries"){
-  if($country==""){
-    $caption="List Of All Countries";
-  }
-  else{
-    $caption="Country Information for Countries matching '$country'";
-  }
+  if($country==""){$caption="List Of All Countries";}
+  else{$caption="Country Information for Countries matching '$country'";}
 }
 else{
-  if($country==""){
-    $caption="City Information For All Countries";
-  }else{
-    $caption="City Information for Countries matching '$country'";
-  }
+  if($country==""){$caption="City Information For All Countries";}
+  else{$caption="City Information for Countries matching '$country'"; }
 }
-  ?>
+?>
 
-<div id="caption">
-  <em><caption><?=$caption?></caption></em>
-</div>
+<div id="caption"> <em><caption><?=$caption?></caption></em> </div>
 
 <div class="table">
 <table>
@@ -53,8 +43,7 @@ else{
       <td><?= $row['independence_year']; ?></td>
       <td><?= $row['head_of_state']; ?></td>
     </tr>
-  <?php 
-  endforeach; ?>
+  <?php endforeach; ?>
   </tbody>
   <thead>
     <tr>
@@ -74,8 +63,7 @@ else{
       <td><?= $row['district']; ?></td>
       <td><?= $row['population']; ?></td>
     </tr>
-  <?php 
-  endforeach; ?>
+  <?php endforeach; ?>
   </tbody>
   <thead>
     <tr>
@@ -85,7 +73,6 @@ else{
     </tr>
   </thead>
 
-<?php }
-  ?>
+<?php } ?>
 </table>
 </div>
