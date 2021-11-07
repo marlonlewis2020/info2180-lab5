@@ -6,7 +6,7 @@ $dbname = 'world';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 $lookup = filter_input(INPUT_GET,"lookup",FILTER_SANITIZE_STRING);
-$country = filter_input(INPUT_GET,"country",FILTER_SANITIZE_STRING);
+$country = strtoupper(filter_input(INPUT_GET,"country",FILTER_SANITIZE_STRING));
 $sql = "";
 
 if($lookup==="countries"){$sql = "SELECT * FROM $lookup where name like '%$country%'";}
@@ -20,11 +20,11 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if($lookup=="countries"){
   if($country==""){$caption="List Of All Countries";}
-  else{$caption="Country Information for Countries matching '$country'";}
+  else{$caption="Country Information for Countries matching '<strong>$country</strong>'";}
 }
 else{
   if($country==""){$caption="City Information For All Countries";}
-  else{$caption="City Information for Countries matching '$country'"; }
+  else{$caption="City Information for Countries matching '<strong>$country</strong>'"; }
 }
 ?>
 

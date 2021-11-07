@@ -45,6 +45,11 @@ body::before{
     opacity: 0.18;
 }
 
+strong{
+    color: var(--btn2);
+    text-decoration: underline;
+}
+
 #caption{
     float: top;
     text-align: center;
