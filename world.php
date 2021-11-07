@@ -20,9 +20,19 @@ $stmt = $conn->query($sql);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if($lookup=="countries"){
-  $caption="General Information for list of Countries";
-}else {
-  $caption="City Information for list of Countries";
+  if($country==""){
+    $caption="List Of All Countries";
+  }
+  else{
+    $caption="Country Information for Countries matching '$country'";
+  }
+}
+else{
+  if($country==""){
+    $caption="City Information For All Countries";
+  }else{
+    $caption="City Information for Countries matching '$country'";
+  }
 }
   ?>
 
