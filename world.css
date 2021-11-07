@@ -150,7 +150,7 @@ p{
     text-align: center;
     width: auto;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 table{
