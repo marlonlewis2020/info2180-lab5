@@ -9,9 +9,9 @@ $lookup = filter_input(INPUT_GET,"lookup",FILTER_SANITIZE_STRING);
 $country = strtoupper(filter_input(INPUT_GET,"country",FILTER_SANITIZE_STRING));
 $sql = "";
 
-if($lookup==="countries"){$sql = "SELECT * FROM $lookup where name like '%$country%'";}
+if($lookup==="countries"){$sql = "SELECT * FROM $lookup where name like '%$country%' order by name asc";}
 else{
-  $sql = "SELECT ci.name, ci.district, ci.population FROM $lookup ci join countries co on ci.country_code = co.code where co.name like '%$country%'";
+  $sql = "SELECT ci.name, ci.district, ci.population FROM $lookup ci join countries co on ci.country_code = co.code where co.name like '%$country%' order by ci.name asc";
 }
 
 $stmt = $conn->query($sql);
