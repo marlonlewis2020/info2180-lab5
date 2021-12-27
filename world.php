@@ -1,8 +1,15 @@
 <?php
+/* 
 $host = 'localhost';
 $username = 'lab5_user';
 $password = 'password123';
-$dbname = 'world';
+$dbname = 'world'; 
+*/
+
+$host = 'sql3.freemysqlhosting.net';
+$username = 'sql3461562';
+$password = '4rrHcdJQ6N';
+$dbname = 'sql3461562';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 $lookup = filter_input(INPUT_GET,"lookup",FILTER_SANITIZE_STRING);
